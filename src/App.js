@@ -6,6 +6,13 @@ import AppHeader from './components/AppHeader';
 import Home from './pages/Home';
 import ItemMockComponent from './components/ItemsApp'
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 const styles = theme => ({
   main: {
     padding: theme.spacing(3),
@@ -22,8 +29,14 @@ const App = ({classes}) => (
     <CssBaseline/>
     <AppHeader/>
     <main className={classes.main}>
-      <Home/>
-      <ItemMockComponent/>    
+    <Switch>
+      <Route path="/home">
+          <Home/>
+      </Route>  
+      <Route path="/app/items"> 
+      <ItemMockComponent path="/app/items"/>   
+      </Route> 
+    </Switch>
     </main>
   </Fragment>
 )
