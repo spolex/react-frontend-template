@@ -1,12 +1,11 @@
-pipeline {
-    agent { docker { image 'node:14-alpine' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'npm --version'
-            }
-        }
+import jenkins.model.*
+jenkins = Jenkins.instance
+
+node{
+
+    stage(‘Build’) {
+
+      sh 'docker-compose -f docker-compose-dev.yml build'
     }
+
 }
-
-
