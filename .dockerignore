@@ -1,0 +1,7 @@
+.dockerignore
+node_modules
+build
+Dockerfile
+Dockerfile.dev
+Jenkinsfile
+REAADME.md

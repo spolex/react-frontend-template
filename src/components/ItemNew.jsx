@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import Validator from '../services/validator'
 import {TextField, Button, Grid} from '@material-ui/core';
 
-class NewItem extends Component {
+class ItemNew extends Component {
     constructor(props){
         super(props);
         this.validator = new Validator();
@@ -60,4 +60,4 @@ class NewItem extends Component {
         )
     }
 }
-export default NewItem
+export default ItemNew

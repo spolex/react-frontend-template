@@ -3,7 +3,7 @@ import Validator from '../services/validator'
 import {TextField, Button, Divider, Grid} from '@material-ui/core';
 
 
-class EditItem extends Component {
+class ItemEdit extends Component {
     constructor(props){
         super(props);
         this.validator = new Validator();
@@ -56,11 +56,11 @@ class EditItem extends Component {
                 <TextField defaultValue={this.state.description} name="description" variant="outlined"  onChange={this.handleInputChange} placeholder="description" />
                 </Grid>
                 <Grid item>
-                <Button type="submit-button" onClick={() => this.onSubmit()}>Confirm</Button>
                 <Button type="button" onClick={() => this.onCancel()}>Cancel</Button>
+                <Button type="submit-button" onClick={() => this.onSubmit()}>Confirm</Button>
                 </Grid>
             </Grid>
         )
     }
 }
-export default EditItem
+export default ItemEdit

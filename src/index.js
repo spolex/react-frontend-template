@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter, Link } from 'react-router-dom';
 import App from './App';
+import Header from './components/Header';
 import reportWebVitals from './reportWebVitals';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 ReactDOM.render(
-  <Router>
-    <App path="/app"/>
-  </Router>,
+  <BrowserRouter>
+    <CssBaseline />
+    <Header/> 
+    <App />
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

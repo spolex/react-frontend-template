@@ -1,9 +1,10 @@
 {
-  "name": "my-react-docker-app",
+  "name": "react-docker-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.11.3",
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "latest",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.1",
@@ -11,7 +12,8 @@
     "react-dom": "latest",
     "react-router-dom": "latest",
     "react-scripts": "latest",
-    "web-vitals": "^1.1.0"
+    "web-vitals": "^1.1.0",
+    "recharts": "latest"
   },
   "scripts": {
     "start": "react-scripts start",

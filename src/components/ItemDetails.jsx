@@ -6,6 +6,7 @@ class ItemDetails extends Component {
         super(props);
         this.onEdit=this.onEdit.bind(this);
         this.onDelete=this.onDelete.bind(this);
+        this.onBack=this.onBack.bind(this);
     }
 
     render(){
@@ -74,14 +75,18 @@ class ItemDetails extends Component {
                 />
                 </ListItem>
                 </List>
-                <Button type="button" onClick={() => this.onDelete()}>Delete</Button>
                 <Button type="button" onClick={() => this.onEdit()}>Edit</Button>
+                <Button type="button" onClick={() => this.onDelete()}>Delete</Button>
+                <Button type="button" onClick={() => this.onBack()}>Back</Button>
             </div>
 
         );}
 
     onEdit() {
         this.props.onEdit();
+    }
+    onBack() {
+      this.props.onBack();
     }
     onDelete(){
         const item = this.props.item;

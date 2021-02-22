@@ -1,10 +1,11 @@
 import React, { Fragment} from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 
-import AppHeader from './components/AppHeader';
 import Home from './pages/Home';
-import ItemMockComponent from './components/ItemsApp'
+import About from './pages/About';
+import Error from './pages/Error'
+import Dashboard from './pages/Dashboard'
+import ItemList from './components/ItemList'
 
 import {
   BrowserRouter as Router,
@@ -23,22 +24,16 @@ const styles = theme => ({
 });
 
 
-
 const App = ({classes}) => (
-  <Fragment>
-    <CssBaseline/>
-    <AppHeader/>
-    <main className={classes.main}>
+  <main className={classes.main}>
     <Switch>
-      <Route path="/home">
-          <Home/>
-      </Route>  
-      <Route path="/app/items"> 
-      <ItemMockComponent path="/app/items"/>   
-      </Route> 
+      <Route path="/" component={Home} exact/>
+      <Route path="/items" component={ItemList}/> 
+      <Route path='/about' component={About} />
+      <Route path='/dashboard' component={Dashboard} />
+      <Route component={Error} />
     </Switch>
-    </main>
-  </Fragment>
+  </main>
 )
 
 export default withStyles(styles)(App);
