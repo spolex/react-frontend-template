@@ -1,12 +1,12 @@
 version: "3.8"
 services: 
   client:
-    image: deep-learning-workstation:5000/react-template
+    image: deep-learning-workstation:5000/react-template:edge
     networks:
       - public 
     build: 
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.edge
     deploy:
       mode: replicated
       replicas: 1

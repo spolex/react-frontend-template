@@ -1,4 +1,4 @@
-import React, { Fragment} from 'react';
+import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
 import Home from './pages/Home';
@@ -8,10 +8,8 @@ import Dashboard from './pages/Dashboard'
 import ItemList from './components/ItemList'
 
 import {
-  BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 const styles = theme => ({

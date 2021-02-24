@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ItemService from '../services/mocked-item-service';
-import ItemNew from './ItemNew'
 import ItemDetails from './ItemDetails'
 import ItemEdit from './ItemEdit'
 import { List,

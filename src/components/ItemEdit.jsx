@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import Validator from '../services/validator'
-import {TextField, Button, Divider, Grid} from '@material-ui/core';
+import {TextField, Button, Grid} from '@material-ui/core';
 
 
 class ItemEdit extends Component {

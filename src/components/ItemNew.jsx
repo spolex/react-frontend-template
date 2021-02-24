@@ -1,11 +1,13 @@
 import React, { Component} from 'react';
 import Validator from '../services/validator'
+import ItemService from '../services/mocked-item-service';
 import {TextField, Button, Grid} from '@material-ui/core';
 
 class ItemNew extends Component {
     constructor(props){
         super(props);
         this.validator = new Validator();
+        this.itemService = new ItemService();
         this.onCancel = this.onCancel.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -20,20 +22,36 @@ class ItemNew extends Component {
     }
 
     handleInputChange(event) {
+        event.preventDefault();
         const target = event.target;
         const value = target.value;
         const name = target.name;
         this.setState({ [name]: value});
     }
 
-    onCancel() {
-        this.props.onCancel();
+    onCancel(event) {
+        this.clearState();
+        Array.from(document.querySelectorAll("input")).forEach(
+            input => (input.value = "")
+        );
     }
+
+    clearState() {
+        this.setState({ 
+            name: '',
+            summary: '',
+            year: '',
+            country: '',
+            description: ''
+        });
+    }
+
     onSubmit() {
         if(this.validator.validateInputs(this.state)) {
-            this.props.onSubmit(this.state);
+            this.itemService.createItem(this.state);
         }
     }
+
     render() {
         return (
            <Grid container direction={"column"} spacing={2}>
