@@ -1,17 +1,12 @@
 version: "3.8"
 services: 
   client:
-    image: deep-learning-workstation:5000/react-template
+    image: react-template
     networks:
       - public 
     build: 
       context: .
       dockerfile: Dockerfile.dev
-    deploy:
-      mode: replicated
-      replicas: 1
-      placement:
-        constraints: [node.hostname == xavier-nx-edge]
     ports:
       - "3000:3000"
       

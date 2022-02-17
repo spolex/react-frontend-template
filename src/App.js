@@ -8,7 +8,7 @@ import Dashboard from './pages/Dashboard'
 import ItemList from './components/ItemList'
 
 import {
-  Switch,
+  Routes,
   Route
 } from "react-router-dom";
 
@@ -24,13 +24,13 @@ const styles = theme => ({
 
 const App = ({classes}) => (
   <main className={classes.main}>
-    <Switch>
-      <Route path="/" component={Home} exact/>
-      <Route path="/items" component={ItemList}/> 
-      <Route path='/about' component={About} />
-      <Route path='/dashboard' component={Dashboard} />
-      <Route component={Error} />
-    </Switch>
+    <Routes>
+      <Route path='/' element={<Home />} exact/>
+      <Route path="/items" element={<ItemList />}/> 
+      <Route path='/about' element={<About />} />
+      <Route path='/dashboard' element={<Dashboard />} />
+      <Route element={<Error />} />
+    </Routes>
   </main>
 )
 
