@@ -8,7 +8,7 @@ import ItemMockComponent from './components/ItemsApp'
 
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   Link
 } from "react-router-dom";
@@ -29,14 +29,10 @@ const App = ({classes}) => (
     <CssBaseline/>
     <AppHeader/>
     <main className={classes.main}>
-    <Switch>
-      <Route path="/home">
-          <Home/>
-      </Route>  
-      <Route path="/app/items"> 
-      <ItemMockComponent path="/app/items"/>   
-      </Route> 
-    </Switch>
+    <Routes>
+      <Route path="/" element={ <Home/>} />
+      <Route path="/items" element={ <ItemMockComponent/>}/> 
+    </Routes>
     </main>
   </Fragment>
 )
