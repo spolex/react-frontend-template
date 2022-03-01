@@ -2,16 +2,8 @@ version: "3.8"
 services: 
   client:
     image: react-template
-    networks:
-      - public 
     build: 
       context: .
       dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
-      
-
-networks:
-  public:
-    external: true
-    name: public
