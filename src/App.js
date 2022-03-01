@@ -7,10 +7,8 @@ import Home from './pages/Home';
 import ItemMockComponent from './components/ItemsApp'
 
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 
 const styles = theme => ({
