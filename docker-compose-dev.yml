@@ -7,3 +7,9 @@ services:
       dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - NODE_OPTIONS=--openssl-legacy-provider
+    volumes:
+      - ".:/app:rw"
+      - "/app/nodemodules"
